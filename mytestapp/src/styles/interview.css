@@ -3,3 +3,40 @@
     height: 80vh;
     margin-top: 3%;
 }
+
+.interview-card {
+    min-height: 40vh;
+    margin-top: 10%;
+}
+
+.interview-card-left {
+    position: relative;
+    min-height: 40vh;
+    padding: 20px;
+    
+}
+
+.interview-card-right {
+    
+}
+
+.record-btn-outer {
+    height: 60%;
+    position: relative;
+}
+
+.record {
+    background-color: #00272E;
+}
+.btn-circle.btn-xl {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 150px;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

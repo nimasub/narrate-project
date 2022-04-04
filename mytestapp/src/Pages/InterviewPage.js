@@ -1,6 +1,7 @@
 import { Container, Card, Col, Row, Button, ButtonGroup } from 'react-bootstrap'
 import Sound from '../volume-up-fill.svg'
 import "../styles/interview.css"
+import Recorder from "../components/Recorder"
 
 function Interview() {
     return (
@@ -14,10 +15,11 @@ function Interview() {
                             <button type="button" className="btn record btn-circle btn-xl">
                                 <img src={Sound}/>Record</button>
                         </Row>
-                        <Row>
-                            <Col><button type="button" className="btn">Rerecord</button></Col>
+                         <Row>
+                            {/* <Col><button type="button" className="btn">Rerecord</button></Col>
                             <Col><button type="button" className="btn">Play/Pause</button></Col>
-                            <Col><button type="button" className="btn">Save/Next</button></Col>
+                            <Col><button type="button" className="btn">Save/Next</button></Col> */}
+                            {/* <Recorder> </Recorder> */}
                         </Row>
 
                     </Col>

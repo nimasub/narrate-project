@@ -1,7 +1,7 @@
 import { Container, Card, Col, Row, Button, ButtonGroup } from 'react-bootstrap'
 import Sound from '../volume-up-fill.svg'
 import "../styles/interview.css"
-import Recorder from "../components/Recorder"
+import Recorder from "../components/Recorder.js"
 
 function Interview() {
     return (
@@ -19,7 +19,7 @@ function Interview() {
                             {/* <Col><button type="button" className="btn">Rerecord</button></Col>
                             <Col><button type="button" className="btn">Play/Pause</button></Col>
                             <Col><button type="button" className="btn">Save/Next</button></Col> */}
-                            {/* <Recorder> </Recorder> */}
+                            <Recorder>Hi </Recorder>
                         </Row>
 
                     </Col>

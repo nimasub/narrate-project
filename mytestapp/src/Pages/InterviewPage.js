@@ -19,7 +19,7 @@ function Interview() {
                             {/* <Col><button type="button" className="btn">Rerecord</button></Col>
                             <Col><button type="button" className="btn">Play/Pause</button></Col>
                             <Col><button type="button" className="btn">Save/Next</button></Col> */}
-                            <Recorder>Hi </Recorder>
+                            <Recorder></Recorder>
                         </Row>
 
                     </Col>

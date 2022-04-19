@@ -9,21 +9,23 @@ import Navbar from "./Navbar.js";
 import ErrorPage from "../Pages/ErrorPage";
 import NarrateNavbar from './Navbar.js';
 import "../styles/App.css"
+import Demo from "./Recorder.js";
 
 
 
 function App() {
   return (
-    <Router> 
-      <NarrateNavbar></NarrateNavbar>
-    <Routes>
-      <Route path="/" exact element={<Home />} />
-      <Route path="/instructions" element={<Instructions />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/interview" element={<Interview/>}/>
-    </Routes>
-   </Router>
+    <Demo></Demo>
+  //   <Router> 
+  //     <NarrateNavbar></NarrateNavbar>
+  //   <Routes>
+  //     <Route path="/" exact element={<Home />} />
+  //     <Route path="/instructions" element={<Instructions />} />
+  //     <Route path="/signup" element={<Signup />} />
+  //     <Route path="/login" element={<Login />} />
+  //     <Route path="/interview" element={<Interview/>}/>
+  //   </Routes>
+  //  </Router>
   );
 }
 

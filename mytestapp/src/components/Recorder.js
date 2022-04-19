@@ -15,6 +15,7 @@ function Recorder() {
      var recordButton;
      var stopButton;
      var pauseButton;
+     let countRecordings = 0;
  
      window.addEventListener('DOMContentLoaded', function loader() {
         recordButton = document.getElementById("recordButton");
@@ -44,6 +45,10 @@ function Recorder() {
  
  
      function startRecording() {
+         if (countRecordings > 0) {
+             // popup code (optional for demo)
+             // delete all the recordings in the li
+         }
          console.log("recordButton clicked");
  
          /*
@@ -137,6 +142,10 @@ function Recorder() {
  
      function stopRecording() {
          console.log("stopButton clicked");
+         countRecordings++;
+         if (countRecordings != 0) {
+            recordButton.innerHTML = "Restart Recording!";
+         }
  
          //disable the stop button, enable the record too allow for new recordings
          stopButton.disabled = true;
@@ -151,6 +160,7 @@ function Recorder() {
  
          //stop microphone access
          gumStream.getAudioTracks()[0].stop();
+         
      }
  
      function createDownloadLink(blob) {

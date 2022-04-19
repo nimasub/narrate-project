@@ -1,5 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { auth } from "../firebase"
+//import { auth } from "../firebase"
+
+import { getAuth } from "firebase/auth"
+import firebaseapp from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+
 
 const AuthContext = React.createContext()
 
@@ -9,10 +15,15 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState()
+    
+    const auth = getAuth(firebaseapp)
 
     function signup(email, password) {
         return auth.createUserWithEmailAndPassword(email, password)
     }
+    function logout() {
+      return auth.signOut();
+  }
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
@@ -23,7 +34,8 @@ export function AuthProvider({ children }) {
 
     const value = { 
         currentUser,
-        signup 
+        signup,
+        logout
     }
 
   return (
@@ -32,3 +44,4 @@ export function AuthProvider({ children }) {
     </AuthContext.Provider>
   )
 }
+

@@ -19,6 +19,7 @@ export default function Login() {
         setLoading(true)
         const auth = getAuth(firebaseapp)
         await signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
+        //navigate.push('/profile')
       } catch(error) {
         var errorcode = error.code
         var errormessage = error.message

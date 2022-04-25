@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "axios": "^0.26.1",
     "bulma": "^0.9.3",
     "git": "^0.1.5",
     "react-router-dom": "^6.2.1"

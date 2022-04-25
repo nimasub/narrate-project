@@ -2,11 +2,13 @@ import { Container, Card, Col, Row, Button, ButtonGroup } from 'react-bootstrap'
 import Sound from '../volume-up-fill.svg'
 import "../styles/interview.css"
 import Recorder from "../components/Recorder.js"
+import PreliminaryQ from "../components/PreliminaryQ.js"
 
 function Interview() {
     return (
         <>
-        <Container className="gray interview-outer">
+        <PreliminaryQ></PreliminaryQ>
+        {/* <Container className="gray interview-outer">
             <Card className="interview-card">
                 <Row>
                     <Col md={5} className="interview-card-left">
@@ -16,9 +18,9 @@ function Interview() {
                                 <img src={Sound}/>Record</button>
                         </Row>
                          <Row>
-                            {/* <Col><button type="button" className="btn">Rerecord</button></Col>
+                             <Col><button type="button" className="btn">Rerecord</button></Col>
                             <Col><button type="button" className="btn">Play/Pause</button></Col>
-                            <Col><button type="button" className="btn">Save/Next</button></Col> */}
+                            <Col><button type="button" className="btn">Save/Next</button></Col> 
                             <Recorder></Recorder>
                         </Row>
 
@@ -39,7 +41,7 @@ function Interview() {
                 <Button variant="secondary">2</Button>
                 <Button variant="secondary">3</Button>
             </ButtonGroup>       
-        </Container>
+        </Container> */}
         </>
     );
 }

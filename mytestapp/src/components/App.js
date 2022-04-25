@@ -8,15 +8,20 @@ import Interview from '../Pages/InterviewPage.js';
 import Navbar from "./Navbar.js";
 import ErrorPage from "../Pages/ErrorPage";
 import NarrateNavbar from './Navbar.js';
+import ProfilePage from '../Pages/ProfilePage.js';
 import "../styles/App.css"
 import Demo from "./Recorder.js";
+import { AuthProvider } from "../contexts/AuthContext.js";
+
 
 
 
 function App() {
   return (
     // <Demo></Demo>
+    
     <Router> 
+      <AuthProvider>
       <NarrateNavbar></NarrateNavbar>
     <Routes>
       <Route path="/" exact element={<Home />} />
@@ -24,8 +29,11 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/interview" element={<Interview/>}/>
+      <Route path="/profile" element={<ProfilePage/>}/>
     </Routes>
+    </AuthProvider>
    </Router>
+   
   );
 }
 

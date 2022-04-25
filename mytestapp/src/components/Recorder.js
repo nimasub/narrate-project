@@ -195,9 +195,9 @@ function Recorder() {
             <script src="//releases.transloadit.com/uppy/robodog/v2.5.1/robodog.min.js"></script> */}
             <div>
     	        <div id="controls">
-    	            <button id="recordButton">Record</button>
-    	            <button id="pauseButton" disabled>Pause</button>
-    	            <button id="stopButton" disabled>Stop</button>
+    	            <button className="rbutton" id="recordButton">Record</button>
+    	            <button className="rbutton" id="pauseButton" disabled>Pause</button>
+    	            <button className="rbutton" id="stopButton" disabled>Stop</button>
                 </div>
                 <div id="formats"></div>
     	        <p><strong>Recordings:</strong></p>

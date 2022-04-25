@@ -1,0 +1,29 @@
+.checkboxbutton {
+    margin: 5px 10px 5px 10px !important;
+    border-bottom-right-radius: 20px!important;
+    border-top-left-radius: 20px!important;
+    border-bottom-left-radius: 20px!important;
+    border-top-right-radius: 20px!important;
+    border-color: rgba(128, 120, 120, 0.733);
+    background: rgba(128, 120, 120, 0.733);
+}
+
+/* .checkboxbutton.active {
+    background-color: rgb(5, 81, 96);
+} */
+
+.topics {
+    white-space: nowrap;
+    width: 80%;
+}
+
+.prelim-questions {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.startint { 
+    margin-top: 30px;
+}

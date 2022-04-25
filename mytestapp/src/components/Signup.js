@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Form, Button, Card, Alert, Container } from 'react-bootstrap'
 // import { useAuth } from '../contexts/AuthContext';
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth"
@@ -8,7 +8,6 @@ import firebaseapp from 'firebase/compat/app';
 import { getDatabase, ref, set } from "firebase/database";
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-import axios from 'axios';
 import "./App.js"
 import "./../styles/App.css"
 import "./../styles/login.css"
@@ -20,12 +19,11 @@ export default function Signup() {
   const passwordConfirmRef = useRef()
   const [ error, setError ] = useState('')
   const [ loading, setLoading ] = useState(false)
+  const [state, setState] = useState({});
 
 
   const nameRef = useRef();
-  const ageRef = useRef();
-  const navigate = useNavigate();
-
+  const navigate = useNavigate()
   
 
   async function handleSubmit(e) {
@@ -42,13 +40,12 @@ export default function Signup() {
         await createUserWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
         setData(); 
 
-        //navigate.push('/profile');
       } catch(error) {
         var errorcode = error.code
         var errormessage = error.message
         setError("Failed to create an account" + errorcode + errormessage)
       }
-
+      navigate('/profile')
       setLoading(false)
   }
 
@@ -60,13 +57,18 @@ export default function Signup() {
   async function setData() {
     const username = getUsername(emailRef.current.value);
     const db = getDatabase();
-    console.log(db);
     set(ref(db, 'users/' + username), {
         email: emailRef.current.value,
         name: nameRef.current.value,
-        age: ageRef.current.value
     });
   }
+
+  useEffect(() => {
+    return () => {
+      setState({}); // This worked for me
+    };
+}, []);
+
  
 
   return (
@@ -84,13 +86,9 @@ export default function Signup() {
                       <Form.Label>Email</Form.Label> 
                       <Form.Control type="email" ref={emailRef} required />
                   </Form.Group>
-                  <Form.Group className="form-group" id="age">
-                      <Form.Label>Age</Form.Label> 
-                      <Form.Control type="age" ref={ageRef} required />
-                  </Form.Group>
                   <Form.Group className="form-group" id="password">
                       <Form.Label>Password</Form.Label> 
-                      <Form.Control type="password" ref={passwordRef} required />
+                      <Form.Control type="password" ref={passwordRef} autoComplete="on" required />
                   </Form.Group>
                   <Form.Group className="form-group" id="password-confirm">
                       <Form.Label>Password Confirmation</Form.Label> 

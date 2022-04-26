@@ -1,26 +1,37 @@
 import { Container, Card, Col, Row, Button, ButtonGroup } from 'react-bootstrap'
+import React, { useEffect, useRef, useState } from 'react'
 import Sound from '../volume-up-fill.svg'
 import "../styles/interview.css"
 import Recorder from "../components/Recorder.js"
 import PreliminaryQ from "../components/PreliminaryQ.js"
 
 function Interview() {
+    const [loading, setLoading] = useState(false);
+    const [questionCount, setQuestionCount] = useState(0);
+    const [questionsArr, setQuestionsArr] = useState(new Array(questionCount));
+
+
+    // will alter to read from questionsBank
+    // async function readData() {
+    //     if (!loading) {
+    //         const username = getUsername(currentUser.email);
+    //         console.log(username);
+    //     const result = await axios({
+    //         method: 'get',
+    //         url: `https://auth-dev-30353-default-rtdb.firebaseio.com/users/${username}.json`,
+    //         withCredientials: true
+    //     }).then((x) => setUserInfo(x.data));
+    //     setLoading(!loading);
+    //     }   
+    // }
     return (
         <>
-        <PreliminaryQ></PreliminaryQ>
-        {/* <Container className="gray interview-outer">
+        {/* <PreliminaryQ></PreliminaryQ> */}
+        <Container className="gray interview-outer">
             <Card className="interview-card">
                 <Row>
                     <Col md={5} className="interview-card-left">
-
-                        <Row className="record-btn-outer">
-                            <button type="button" className="btn record btn-circle btn-xl">
-                                <img src={Sound}/>Record</button>
-                        </Row>
                          <Row>
-                             <Col><button type="button" className="btn">Rerecord</button></Col>
-                            <Col><button type="button" className="btn">Play/Pause</button></Col>
-                            <Col><button type="button" className="btn">Save/Next</button></Col> 
                             <Recorder></Recorder>
                         </Row>
 
@@ -36,12 +47,12 @@ function Interview() {
                     </Col>
                 </Row>
             </Card>
-            <ButtonGroup style={{marginLeft: "10%"}}>
+            {/* <ButtonGroup style={{marginLeft: "10%"}}>
                 <Button variant="secondary">1</Button>
                 <Button variant="secondary">2</Button>
                 <Button variant="secondary">3</Button>
-            </ButtonGroup>       
-        </Container> */}
+            </ButtonGroup>        */}
+        </Container>
         </>
     );
 }

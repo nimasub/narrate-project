@@ -5,14 +5,18 @@ import "./../styles/colors.css"
 
 function NarrateNavbar() {
     return(
-
+<>
 <Navbar collapseOnSelect expand="lg" variant="dark" className="teal">
-    <Navbar.Brand href="/">
+<Navbar.Brand href="/">
       <img alt="" src={Logo} width="80" height="50" className="d-inline-block align-top" /> 
-    </Navbar.Brand>
+  </Navbar.Brand>
+</Navbar>
+<Navbar collapseOnSelect expand="lg" variant="light" className="gray">
+
+    
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav  className="justify-content-end" style={{width:"90%"}}>
+    <Nav  className="justify-content-center" style={{width:"40%"}}>
       <Nav.Link href="/"> Home </Nav.Link>
       <Nav.Link href="/instructions"> Instructions </Nav.Link>
       <Nav.Link href="/signup"> Sign Up </Nav.Link>
@@ -20,6 +24,8 @@ function NarrateNavbar() {
     </Nav>
     </Navbar.Collapse>
     </Navbar>
+    </>
+    
 );
 }
 

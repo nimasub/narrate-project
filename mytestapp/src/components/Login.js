@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert, Container } from 'react-bootstrap'
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth"
+import { Link, useNavigate } from "react-router-dom"
 import  firebaseapp from "../firebase"
 import "./../styles/login.css"
 import "./../styles/App.css"
@@ -10,6 +11,8 @@ export default function Login() {
   const passwordRef = useRef()
   const [ error, setError ] = useState('')
   const [ loading, setLoading ] = useState(false)
+  const navigate = useNavigate()
+
 
   async function handleSubmit(e) {
       e.preventDefault()
@@ -19,7 +22,7 @@ export default function Login() {
         setLoading(true)
         const auth = getAuth(firebaseapp)
         await signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
-        //navigate.push('/profile')
+        navigate('/profile')
       } catch(error) {
         var errorcode = error.code
         var errormessage = error.message

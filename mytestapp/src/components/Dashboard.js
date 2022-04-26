@@ -85,10 +85,10 @@ export default function Dashboard() {
             <Row>
                 <Col>
                     <Row>
-                        Name:
+                        <h2 className="font-1">Name:</h2>
                     </Row>
                     <Row>
-                        {userInfo.name}
+                        <h3 className="font-1 tab">     {userInfo.name}</h3>
                     </Row>
                     <Row>
                        
@@ -101,24 +101,20 @@ export default function Dashboard() {
                     <Row></Row>
                     <Row></Row>
                     <Row>
-                        Email:
-                        {/* Password:  */}
+                    <h2 className="font-1">Email:</h2>
+                             {/* Password:  */}
                     </Row>
                     <Row>
-                        {userInfo.email}
+                    <h3 className="font-1">    {userInfo.email}</h3>
                         {/* ******** */}
                     </Row>
                 </Col>
              </Row>
+             <br/>
              <Row>
-                 <Container>
-                     In Progress:
-                     <Row>
 
-                     </Row>
-                 </Container>
                  <Container>
-                     Completed: 
+                    <h2 className="font-1">My Stories:</h2>
                      <Row>
 
                      </Row>

@@ -7,7 +7,6 @@ html {
     word-wrap: break-word;
     overflow-wrap: break-word;
     color:black;
-    margin:2em;
   }
   h1 {
     text-decoration: underline red;

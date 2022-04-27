@@ -98,7 +98,7 @@ export default function PreliminaryQ({sendDataToParent}) {
              <Container className="gray interview-outer stack-top">
 
                  <div className="prelim-questions">
-                     <p>Please select 3-5 topics that you would like to talk about in your interview!</p>
+                     <p>Please select 1-5 topics that you would like to talk about in your interview!</p>
                 <ButtonGroup
                 type="checkbox"
                 className="topics flex-wrap"

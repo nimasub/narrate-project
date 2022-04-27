@@ -6,13 +6,14 @@ import "./../styles/PreliminaryQ.css"
 import axios from 'axios';
 
 
-export default function PreliminaryQ() {
+export default function PreliminaryQ({sendDataToParent}) {
 
     const [state, setState] = useState({});
     const [numTopics, setNumTopics] = useState(0);
     const [loading, setLoading] = useState(true);
     const [topicsArr, setTopicsArr] = useState(new Array(numTopics));
     const [selections, setSelections] = useState(new Array(numTopics).fill(false));
+    const [filteredTopics, setFilteredTopics] = useState(new Array(0));
 
     async function countTopics() { 
         
@@ -27,8 +28,7 @@ export default function PreliminaryQ() {
             setSelections(new Array(num).fill(false));
             setTopicsArr(topics);
         });
-        setLoading(!loading);
-        
+        setLoading(!loading);  
     }
 
     function createButtons() {
@@ -60,6 +60,8 @@ export default function PreliminaryQ() {
             const index = e.target.value;
             const updatedSelections = selections.map((item, i) => (i == index ? !item : item));
             setSelections(updatedSelections);
+            setFilteredTopics(topicsArr.filter((item, i) => updatedSelections[i] == true));
+            console.log(filteredTopics);
             changeButtonColor(button, updatedSelections, index);
             setLoading(false);
         } if (trues == 5) {
@@ -68,6 +70,8 @@ export default function PreliminaryQ() {
             if (selections[index]) {
                 const updatedSelections = selections.map((item, i) => (i == index ? !item : item));
                 setSelections(updatedSelections);
+                setFilteredTopics(topicsArr.filter((item, i) => updatedSelections[i] == true));
+                console.log(filteredTopics);
                 changeButtonColor(button, updatedSelections, index);
                 setLoading(false);
             } else {
@@ -89,9 +93,9 @@ export default function PreliminaryQ() {
 
 
     return (
-        <div>
+        <>
             {!loading ?
-             <Container className="gray interview-outer">
+             <Container className="gray interview-outer stack-top">
 
                  <div className="prelim-questions">
                      <p>Please select 3-5 topics that you would like to talk about in your interview!</p>
@@ -106,9 +110,9 @@ export default function PreliminaryQ() {
                 <Row>
                 <Col></Col>
                 <Col>
-                <Button className="float-end startint">Start Interview</Button>
+                <Button className="float-end startint" onClick={() => sendDataToParent(filteredTopics)}>Start Interview</Button>
                 </Col>
                 </Row>
              </Container> : <Container></Container>}
-        </div>);
+        </>);
 }

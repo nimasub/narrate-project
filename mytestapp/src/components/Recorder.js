@@ -17,20 +17,17 @@ function Recorder() {
      var pauseButton;
      let countRecordings = 0;
  
-     window.addEventListener('DOMContentLoaded', function loader() {
+     window.addEventListener('load', function loader() {
         recordButton = document.getElementById("recordButton");
         stopButton = document.getElementById("stopButton");
         pauseButton = document.getElementById("pauseButton");
-        //add events to those 2 buttons
-        recordButton.addEventListener("click", startRecording);
-        stopButton.addEventListener("click", stopRecording);
-        pauseButton.addEventListener("click", pauseRecording);
-      }, { once: true });
+        //add events to those 3 buttons
+        recordButton.addEventListener("click", startRecording, false);
+        stopButton.addEventListener("click", stopRecording, false);
+        pauseButton.addEventListener("click", pauseRecording, false);
+      }, { once: false });
      
  
-    
-         
-
  
      // true on chrome, false on firefox
      console.log("audio/webm:"+MediaRecorder.isTypeSupported('audio/webm;codecs=opus'));

@@ -1,3 +1,8 @@
+.stack-top {  
+    z-index: 9;
+    margin: 3% auto;
+}
+
 .checkboxbutton {
     margin: 5px 10px 5px 10px !important;
     border-bottom-right-radius: 20px!important;

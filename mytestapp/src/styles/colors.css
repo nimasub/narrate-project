@@ -5,3 +5,14 @@
 .gray {
     background-color: #F8F9FA;
 }
+
+.instructions-page {
+    background-color: #F8F9FA;
+    padding: 5%;
+    font-family: "Cambria";
+    margin-top: 3%;
+}
+
+.instructions {
+    font-size: 17px;
+}

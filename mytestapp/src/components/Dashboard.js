@@ -81,7 +81,7 @@ export default function Dashboard() {
     if (!userInfo) { return <h2>Please refresh the page in a few seconds</h2>; }
     else { return (
     <div>
-         <Container className="gray interview-outer">
+         <Container className="gray interview-outer1">
             <Row>
                 <Col>
                     <Row>

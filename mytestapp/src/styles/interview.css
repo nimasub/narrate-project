@@ -16,6 +16,13 @@
   transform: translate(-50%, -50%);
 }
 
+.interview-outer1 {
+    width: 80vw;
+    height: 80vh;
+    margin-top: 3%;
+    padding: 2em;
+}
+
 .interview-card {
     min-height: 40vh;
     margin-top: 5%;

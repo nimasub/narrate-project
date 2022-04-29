@@ -23,7 +23,7 @@ export default function Dashboard() {
 
 
     async function readData() {
-        if (!loading) {
+        if (!loading && auth.currentUser) {
             const username = getUsername(currentUser.email);
             console.log(username);
         const result = await axios({
@@ -88,7 +88,7 @@ export default function Dashboard() {
                         <h2 className="font-1">Name:</h2>
                     </Row>
                     <Row>
-                        <h3 className="font-1 tab">     {userInfo.name}</h3>
+                        <h3 className="font-1 tab">     {userInfo.name ? userInfo.name: ""}</h3>
                     </Row>
                     <Row>
                        
@@ -105,7 +105,7 @@ export default function Dashboard() {
                              {/* Password:  */}
                     </Row>
                     <Row>
-                    <h3 className="font-1">    {userInfo.email}</h3>
+                    <h3 className="font-1">    {auth.currentUser == null ? "" : userInfo.email}</h3>
                         {/* ******** */}
                     </Row>
                 </Col>

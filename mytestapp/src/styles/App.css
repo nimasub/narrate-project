@@ -36,3 +36,15 @@
       transform: rotate(360deg);
     }
   }
+
+  .position-below {
+    position: fixed;
+    top: 65px;
+
+  }
+
+  #wrapper {
+    position: sticky;
+    margin-top: 110px;
+
+  }

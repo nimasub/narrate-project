@@ -15,12 +15,13 @@ function NarrateNavbar() {
 
     return(
 <>
-<Navbar collapseOnSelect expand="lg" variant="dark" className="teal">
+<div id="wrapper">
+<Navbar fixed="top" collapseOnSelect expand="lg" variant="dark" className="teal" >
 <Navbar.Brand href="/">
       <img alt="" src={Logo} width="80" height="50" className="d-inline-block align-top" /> 
   </Navbar.Brand>
 </Navbar>
-<Navbar collapseOnSelect expand="lg" variant="light" className="gray">
+<Navbar collapseOnSelect expand="lg" variant="white" className="gray position-below" fixed="top">
 
     
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -43,7 +44,9 @@ function NarrateNavbar() {
     </Nav>
     </Navbar.Collapse>
     </Navbar>
+    </div>
     </>
+
     
 );
 }

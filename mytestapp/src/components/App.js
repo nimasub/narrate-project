@@ -23,7 +23,7 @@ function App() {
     <Router> 
       <AuthProvider>
       <NarrateNavbar></NarrateNavbar>
-    <Routes>
+    <Routes id="wrapper">
       <Route path="/" exact element={<Home />} />
       <Route path="/instructions" element={<Instructions />} />
       <Route path="/signup" element={<Signup />} />

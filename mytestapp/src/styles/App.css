@@ -46,5 +46,6 @@
   #wrapper {
     position: sticky;
     margin-top: 110px;
+    z-index: 10000000000;
 
   }

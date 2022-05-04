@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from '../contexts/AuthContext';
 import Logo from "../narratelogo.png"
 import "./../styles/App.css"
@@ -8,10 +9,23 @@ import "./../styles/colors.css"
 
 function NarrateNavbar() {
 
+  const { currentUser, logout } = useAuth();
   const [signedIn, setSignedIn] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  
+
+  async function handleLogout() {
+    setError('');
+    try {
+        await logout();
+        navigate('/login')
+    } catch {}
+    setError('Failed to log out');
+}
 
   let auth = useAuth();
-  console.log(auth);
+  //console.log(auth);
 
     return(
 <>
@@ -36,7 +50,7 @@ function NarrateNavbar() {
         <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
         <NavDropdown.Item href="/interview">Start New Interview</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#" onClick={auth.logout}>Log Out</NavDropdown.Item>
+        <NavDropdown.Item href="#" onClick={handleLogout} >Log Out</NavDropdown.Item>
       </NavDropdown>
       }
     

@@ -24,6 +24,7 @@ export default function Dashboard() {
 
     async function readData() {
         if (!loading && auth.currentUser) {
+            setLoading(true);
             const username = getUsername(currentUser.email);
             console.log(username);
         const result = await axios({
@@ -31,7 +32,7 @@ export default function Dashboard() {
             url: `https://auth-dev-30353-default-rtdb.firebaseio.com/users/${username}.json`,
             withCredientials: true
         }).then((x) => setUserInfo(x.data));
-        setLoading(!loading);
+        setLoading(false);
         }   
     }
 

@@ -22,7 +22,8 @@ export default function PreliminaryQ({sendDataToParent}) {
             url: `https://auth-dev-30353-default-rtdb.firebaseio.com/questionBank.json`,
             withCredientials: true
         }).then((x) => {
-            const topics = Object.keys(x.data);
+            let topics = Object.keys(x.data).filter((val) => val != "StandardQuestions");
+            console.log(topics);
             const num = topics.length;
             setNumTopics(num);
             setSelections(new Array(num).fill(false));

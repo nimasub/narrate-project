@@ -1,3 +1,10 @@
+# Start up information from previous COMP 523 Team
+
+Ensure github and Node.js are installed on your computer.
+Create an empty folder on your desktop, and clone this git hub repository using the HTML link provided. 
+Install dependencies. (npm install)
+Display locally. (npm start)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
